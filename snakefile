@@ -3,6 +3,7 @@ import re
 import sys
 from os.path import join 
 
+
 def message(mes):
 	sys.stderr.write("|---- " + mes + "\n")
 
@@ -24,7 +25,18 @@ THREADS = config["threads"]
 
 message(str(NBSAMPLES)+"samples  will be analysed")
 message(str(len(READS))+"fastq files  will be processed")
+
+for i in READS:
+	message("read file: "+i)
+ 
+
+REPAIRPATH = config["RepairPATH"]
+
+
+
 message("Run name: "+RUN)
+
+
 
 if NBREADS != 2*NBSAMPLES:
 	errormes("Please provide two reads file per sample")
@@ -80,6 +92,7 @@ rule Repair_Pairs:
 	input:
 		R1="cutadaptfiles/{smp}_1.clean.fastq",
 		R2="cutadaptfiles/{smp}_2.clean.fastq"
+	params: exec = config["RepairPATH"]
 	output:	
 		"cutadaptfiles/{smp}_1.clean.fastq_pairs_R1.fastq",
 		"cutadaptfiles/{smp}_2.clean.fastq_pairs_R2.fastq",
@@ -87,7 +100,7 @@ rule Repair_Pairs:
 	log: 	"logsRepairspairs/{smp}_repair.log"
 	shell:
 		"""
-		python2 ./bin/fastqCombinePairedEnd.py {input.R1} {input.R2} 2> log
+		python2 {params.exec} {input.R1} {input.R2} 2> log
 		"""
 
 

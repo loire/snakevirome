@@ -3,7 +3,11 @@
 # A name for the run:
 run: "culiumdataset"
 # path to fastq files. All samples fastq are in this directory and formatted as {sample}_1.fastq and {sample}_2.fastq
-fastq: "./dataset_simple/"
+fastq: "./dataset/"
+# path to some executables
+#
+RepairPATH: "~/bin/bin/fastqCombinePairedEnd.py"
+        
 # Sequence of sequencing adapters
 A3: "CAGCGGACGCCTATGTGATG"
 A5: "CATCACATAGGCGTCCGCTG"
