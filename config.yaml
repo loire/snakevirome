@@ -1,0 +1,14 @@
+# YAML file format
+# Some options for the seekviralreads snakefile pipeline
+# A name for the run:
+run: "culiumdataset"
+# path to fastq files. All samples fastq are in this directory and formatted as {sample}_1.fastq and {sample}_2.fastq
+fastq: "./dataset_simple/"
+# Sequence of sequencing adapters
+A3: "CAGCGGACGCCTATGTGATG"
+A5: "CATCACATAGGCGTCCGCTG"
+# Path to host sequences
+host: "host_sequences/Bacterial16S_and_Aedes_vexans_genome.fasta"
+# Number of threads to use for mapping and assembly jobs
+threads: 8
+
