@@ -1,18 +1,18 @@
 # YAML file format
 # Some options for the seekviralreads snakefile pipeline
 # A name for the run:
-run: "culiumdataset"
+run: "Aedesdataset"
 # path to fastq files. All samples fastq are in this directory and formatted as {sample}_1.fastq and {sample}_2.fastq
-fastq: "./dataset/"
-# path to some executables
-#
-RepairPATH: "~/bin/bin/fastqCombinePairedEnd.py"
-        
+fastq: "/gs7k1/projects/CMAEE/GutierrezS/H001_Aevex_mares/"
 # Sequence of sequencing adapters
 A3: "CAGCGGACGCCTATGTGATG"
 A5: "CATCACATAGGCGTCCGCTG"
 # Path to host sequences
-host: "host_sequences/Bacterial16S_and_Aedes_vexans_genome.fasta"
+host: "/homedir/exbrayat/host_sequences/Bacterial16S_and_Aedes_vexans_genome.fasta"
 # Number of threads to use for mapping and assembly jobs
-threads: 8
+threads: 15
+basse_virale: "/work/BANK/biomaj/nt_vir/current/blast/nt_vir"
+basse_nt: "/work/BANK/biomaj/nt_vir/current/blast/nt_vir"
+Scripts: "/homedir/exbrayat/bin/"
+KronaDir: "/homedir/loire/work/ViralMetagenomic/test_snakemake/Taxodata/"
 
