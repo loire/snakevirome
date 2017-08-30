@@ -1,7 +1,7 @@
 # snakevirome
 
 ## Authors
-Etienne Loire (CIRAD) & Antony Exbrayat (CIRAD)
+Etienne Loire (CIRAD) & Antoni Exbrayat (CIRAD)
 
 ## Purpose:
 
